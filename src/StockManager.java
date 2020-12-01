@@ -101,12 +101,20 @@ public class StockManager
      */
     public void printAllProducts()
     {
+        System.out.println("\n" + ConsoleColours.ANSI_RESET + "\n");
+
+        if(ConsoleColours.IS_AVAILABLE)
+            System.out.print(ConsoleColours.ANSI_BRIGHT_BLACK +
+                    ConsoleColours.ANSI_BRIGHT_BG_GREEN);
+
+        System.out.println("\n Printing all the Current Stock\n");
+
         for(Product product : stock)
         {
             System.out.println("    " + product);
         }
         
-        System.out.println();
+        System.out.println("\n" + ConsoleColours.ANSI_RESET + "\n");
     }
     
     /**

@@ -36,7 +36,7 @@ public class StockApp
             printMenuChoices();
             
             String prompt = "\n    Enter your choice > ";
-            String choice = reader.getInput(prompt).toLowerCase();
+            String choice = reader.getString(prompt).toLowerCase();
             System.out.println();
             
             if(choice.startsWith("quit"))
@@ -94,7 +94,7 @@ public class StockApp
         int id = reader.getInt(prompt);
 
         prompt = "\n Please enter the product name > ";
-        String name = reader.getInput(prompt);    
+        String name = reader.getString(prompt);
         
         Product product = new Product(id, name);
         manager.addProduct(product);
@@ -186,7 +186,7 @@ public class StockApp
     private void searchProducts()
     {
         String prompt = "\n Please enter search term > ";
-        String target = reader.getInput(prompt);
+        String target = reader.getString(prompt);
         
         System.out.println(" Printing products matching " 
                            + target + "\n");
@@ -213,6 +213,10 @@ public class StockApp
      */
     private void printMenuChoices()
     {
+        if(ConsoleColours.IS_AVAILABLE)
+            System.out.print(ConsoleColours.ANSI_BRIGHT_WHITE +
+                    ConsoleColours.ANSI_BG_YELLOW);
+
         System.out.println();
         System.out.println("    Add:         Add a new product");
         System.out.println("    Deliver:     Deliver a product");
@@ -230,7 +234,8 @@ public class StockApp
      */
     private void printHeading()
     {
-        System.out.print(ConsoleColours.ANSI_BLACK +
+        if(ConsoleColours.IS_AVAILABLE)
+            System.out.print(ConsoleColours.ANSI_BLACK +
                          ConsoleColours.ANSI_BG_YELLOW);
                            
         System.out.println("    ******************************");

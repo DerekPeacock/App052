@@ -10,6 +10,7 @@ public class Program
 {
     private static StockApp app;
 
+    public static final boolean USE_COLOUR = true;
     /**
      * This class creates and runs an instance of
      * the StockApp class

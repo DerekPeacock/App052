@@ -28,12 +28,24 @@ public class InputReader
      *
      * @return  A String typed by the user.
      */
-    public String getInput(String prompt)
+    public String getString(String prompt)
     {
-        System.out.println(prompt);   
-        String inputLine = reader.nextLine();
+        String value = null;
+        boolean isValid = false;
 
-        return inputLine;
+        while(isValid == false)
+        {
+            System.out.println(prompt);
+            value = reader.nextLine();
+
+            if(value.isBlank() || value.isEmpty())
+            {
+                System.out.println("Your input is blank");
+            }
+            else isValid = true;
+        }
+
+        return value;
     }
     
     /**
@@ -46,11 +58,49 @@ public class InputReader
      */
     public int getInt(String prompt)
     {
-        System.out.println(prompt); 
-        String value = reader.nextLine();
-        //int number = reader.nextInt();
-        
-        int number = Integer.parseInt(value);
+        boolean isValid = false;
+        int number = 0;
+
+        while(isValid == false)
+        {
+            System.out.println(prompt);
+
+            try
+            {
+                number = reader.nextInt();
+                isValid = true;
+            }
+            catch(Exception e)
+            {
+                System.out.println("\nInvalid integer!\n");
+            }
+
+        }
         return number;
-    }    
+    }
+
+    /**
+     * Display a prompt and Get an integer value between min and max
+     * @param prompt the message to the user to enter an int
+     * @param min the minimum allowed value
+     * @param max the maximum allowed value
+     * @return the integer number
+     */
+    public int getInt(String prompt, int min, int max)
+    {
+        boolean isValid = false;
+        int number = 0;
+
+        while(isValid == false)
+        {
+            number = getInt(prompt);
+            if(number < min || number > max)
+            {
+                System.out.println("Number must be between " + min + " and " + max);
+            }
+            else
+                isValid = true;
+        }
+        return number;
+    }
 }

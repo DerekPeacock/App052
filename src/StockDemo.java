@@ -31,7 +31,7 @@ public class StockDemo
         this.manager = manager;
         
         addTestData();
-        demoDeliverProducts();
+        //demoDeliverProducts();
     }
     
     public void addTestData()
