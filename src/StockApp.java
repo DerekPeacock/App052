@@ -10,9 +10,9 @@
 public class StockApp
 {
     // instance variables - replace the example below with your own
-    private StockManager manager;
+    private final StockManager manager;
 
-    private InputReader reader;
+    private final InputReader reader;
     
     /**
      * Constructor for objects of class StockApp

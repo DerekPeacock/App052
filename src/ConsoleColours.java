@@ -7,7 +7,7 @@
  */
 public class ConsoleColours
 {
-    public static final boolean IS_AVAILABLE = true;
+    public static final boolean IS_AVAILABLE = false;
 
     public static final String ANSI_RESET  = "\u001B[0m";
 
@@ -47,11 +47,4 @@ public class ConsoleColours
     public static final String ANSI_BRIGHT_BG_CYAN   = "\u001B[106m";
     public static final String ANSI_BRIGHT_BG_WHITE  = "\u001B[107m";    
 
-    /**
-     * Constructor for objects of class ConsoleColours
-     */
-    public ConsoleColours()
-    {
-        System.out.println(ANSI_BG_YELLOW + "This is on Yellow");
-    }
 }

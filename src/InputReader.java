@@ -1,4 +1,3 @@
-import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -7,6 +6,9 @@ import java.util.Scanner;
  * 
  * @author     Michael Kölling and David J. Barnes
  * @version    0.1 (2016.02.29)
+ *
+ * Modified and extended by Dr Derek Peacock
+ * December 1st 2020
  */
 public class InputReader
 {
@@ -21,10 +23,8 @@ public class InputReader
     }
 
     /**
-     * Prompt the user to enter a string
-     * Read a line of text from standard input 
-     * (the text terminal),
-     * and return a String.
+     * Prompt the user to enter a string and Read a line of text
+     * from standard input (the text terminal), and return a String.
      *
      * @return  A String typed by the user.
      */

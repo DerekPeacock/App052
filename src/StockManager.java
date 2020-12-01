@@ -79,7 +79,7 @@ public class StockManager
     public void searchProducts(String targetPhrase)
     {
         int count = 0;
-        targetPhrase.toLowerCase();
+        targetPhrase = targetPhrase.toLowerCase();
         
         System.out.println("\nSearching for " + targetPhrase + "\n");
         
@@ -122,7 +122,7 @@ public class StockManager
     */
     public ArrayList<Product> printLowStockProducts(int minimum)
     {
-        ArrayList<Product> lowStock = new ArrayList<Product>();
+        ArrayList<Product> lowStock = new ArrayList<>();
         int count = 0;
         
         System.out.println(" Printing all out of stock products");

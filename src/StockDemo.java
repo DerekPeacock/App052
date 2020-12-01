@@ -8,7 +8,7 @@ import java.util.Random;
  * @author David J. Barnes and Michael Kölling.
  * @version 2016.02.29
  * 
- * @modifed by Derek Peacock
+ * modifed by Derek Peacock
  * 22/Sep/2020
  */
 public class StockDemo
@@ -17,9 +17,9 @@ public class StockDemo
     public static final int LAST_ID = 209;
     
     // The stock manager.
-    private StockManager manager;
+    private final StockManager manager;
     
-    private Random randomGenerator;
+    private final Random randomGenerator;
 
     /**
      * Create a StockManager and populate it with
